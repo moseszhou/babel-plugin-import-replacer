@@ -1,0 +1,38 @@
+{
+  "name": "babel-plugin-import-replacer",
+  "version": "1.0.0",
+  "description": "一个用于替换特定import语句的Babel插件，特别适用于Taro多端开发项目",
+  "main": "index.js",
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "import",
+    "replace",
+    "taro",
+    "transform"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/babel-plugin-import-replacer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/babel-plugin-import-replacer/issues"
+  },
+  "homepage": "https://github.com/your-username/babel-plugin-import-replacer#readme",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ]
+}
