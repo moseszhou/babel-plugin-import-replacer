@@ -17,17 +17,28 @@ module.exports = {
           '/src/utils/'      // 排除工具目录
         ],
         
-        // 替换规则
+        // 替换规则 - 基于来源的替换
         replace: {
-          Text: '@/components/CustomText',
-          Button: '@/components/CustomButton',
-          View: '@/components/CustomView'
+          Text: {
+            'react-native': '@/components/CustomTextA',      // react-native 的 Text -> CustomTextA
+            '@tarojs/components': '@/components/CustomTextB' // @tarojs/components 的 Text -> CustomTextB
+          },
+          
+          Button: {
+            'react-native': '@/components/CustomButton',
+            '@tarojs/components': '@/components/TaroButton'  // 不同来源替换成不同组件
+          },
+          
+          View: {
+            'react-native': '@/components/RNView',
+            '@tarojs/components': '@/components/TaroView'
+          }
         },
         
-        // 自定义执行逻辑
-        execute: (name, filename, env) => {
-          // 仅在 h5 平台替换 Text 组件
-          if (name === 'Text' && env === 'h5') {
+        // 自定义执行逻辑（现在包含 source 参数）
+        execute: (name, filename, env, source) => {
+          // 仅在 h5 平台替换来自 react-native 的 Text 组件
+          if (name === 'Text' && env === 'h5' && source === 'react-native') {
             return true
           }
           
