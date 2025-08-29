@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-import-replacer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一个用于替换特定import语句的Babel插件，特别适用于Taro多端开发项目",
   "main": "index.js",
   "keywords": [
